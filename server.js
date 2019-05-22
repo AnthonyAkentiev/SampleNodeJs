@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express()
-const port = 8080
+
+const port = process.env.PORT || 8080;
 
 app.get('/status', function(req, res) {
-	res.send('Status 0')
+	res.send('Status 0');
 });
 
 app.post('/doSomething', function(req, res) {
@@ -11,4 +12,4 @@ app.post('/doSomething', function(req, res) {
 	res.send(0);
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
